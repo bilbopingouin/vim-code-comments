@@ -19,20 +19,19 @@
 
 
 " un/comment in Visual
-let b:comment_leader = '# ' " default value
-au FileType vim	    let b:comment_leader = '" '
-au FileType c,css   let b:comment_leader = '// '
-au FileType cpp     let b:comment_leader = '// '
-au FileType sh,make let b:comment_leader = '# '
-au FileType tex	    let b:comment_leader = '% '
-au FileType vhdl    let b:comment_leader = '-- '
-au FileType python  let b:comment_leader = '# '
-au FileType ruby    let b:comment_leader = '# '
-au FileType javascript    let b:comment_leader = '// '
-au FileType gnuplot let b:comment_leader = '# '
-au FileType octave  let b:comment_leader = '# '
+let g:comment_leader = '# ' " default value
+au FileType vim	          let g:comment_leader = '" '
+au FileType c,css         let g:comment_leader = '// '
+au FileType cpp           let g:comment_leader = '// '
+au FileType sh,make       let g:comment_leader = '# '
+au FileType tex,plaintex  let g:comment_leader = '% '
+au FileType vhdl          let g:comment_leader = '-- '
+au FileType python        let g:comment_leader = '# '
+au FileType ruby          let g:comment_leader = '# '
+au FileType javascript    let g:comment_leader = '// '
+au FileType gnuplot       let g:comment_leader = '# '
+au FileType octave        let g:comment_leader = '# '
 
-
-noremap <leader>c : <C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
-noremap <leader>u : <C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
+noremap <leader>c : <C-B>sil <C-E>s/^/<C-R>=escape(g:comment_leader,'\/')<CR>/<CR>:noh<CR>
+noremap <leader>u : <C-B>sil <C-E>s/^\V<C-R>=escape(g:comment_leader,'\/')<CR>//e<CR>:noh<CR>
 
